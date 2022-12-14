@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
+import './QuizStyle.css'
 
 const QuizComp = () => {
 
-    const QuestionBank = [
+    var QuestionBank = [
         {
             Question: "Cartoon character Spongebob Squarepants lives in a what under the sea ?",
-            AnswerText: [
+            Answers: [
                 { Answer: 'PineApple', isCorrect: true },
                 { Answer: 'Tower', isCorrect: false },
                 { Answer: 'Castle', isCorrect: false },
@@ -14,7 +16,7 @@ const QuizComp = () => {
         },
         {
             Question: "What does the character Popeye famously eat to boost his strength ?",
-            AnswerText: [
+            Answers: [
                 { Answer: 'Egg', isCorrect: false },
                 { Answer: 'Honey', isCorrect: false },
                 { Answer: 'Spinach', isCorrect: true },
@@ -23,7 +25,7 @@ const QuizComp = () => {
         },
         {
             Question: "In which series will you find the cartoon characters Blossom, Bubbles and Buttercup ?",
-            AnswerText: [
+            Answers: [
                 { Answer: 'Oswald', isCorrect: false },
                 { Answer: 'Power Puff Girls', isCorrect: true },
                 { Answer: 'Bob The Builder', isCorrect: false },
@@ -32,7 +34,7 @@ const QuizComp = () => {
         },
         {
             Question: "The Cartoon Network channel was launched in the USA in which year ?",
-            AnswerText: [
+            Answers: [
                 { Answer: '2001', isCorrect: false },
                 { Answer: '1992', isCorrect: true },
                 { Answer: '1947', isCorrect: false },
@@ -41,41 +43,89 @@ const QuizComp = () => {
         },
         {
             Question: "What is the thing which have so many holes ?",
-            AnswerText: [
+            Answers: [
                 { Answer: 'Oswald', isCorrect: false },
                 { Answer: 'Bob The Builder', isCorrect: false },
                 { Answer: 'Sponge Bob Pants', isCorrect: true },
                 { Answer: 'Noddy', isCorrect: false }
             ]
-        },
+        }
     ]
+
 
     // useStateHooks
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [score, setScore] = useState(0)
     const [showScore, setShowScore] = useState(false)
 
+    //handleSubmit
+    const handleAnswerResponse = (isCorrect) =>
+     {
+        if (isCorrect) 
+        {
+            setScore(score + 1)
+        }
 
-    console.log(QuestionBank)
+        const nextQuestion = currentQuestion + 1
+        if (nextQuestion < QuestionBank.length) 
+        {
+            setCurrentQuestion(nextQuestion)
+        }
+        else 
+        {
+            setShowScore(true);
+        }
+    }
+
+    // resetQuiz
+    const resetQuiz = () => {
+        setCurrentQuestion(0);
+        setScore(0);
+        setShowScore(false);
+    }  
+
+    // console.log(QuestionBank)
     return (
-        <div>
+        <div className='app'>
             {
                 showScore ?
                     (
-                        <div>
+                        <div className='score-section'>
                             You have scored {score} out of {QuestionBank.length}
+                            <>
+                                <button type="submit" onClick={resetQuiz}>
+                                    Play Again..
+                                </button>
+                            </>
                         </div>
-                    ) :
-                    (
+                    ) : (
                         <>
-                            <div>
+                            {/* QuestionText */}
+                            <div className='question-section'>
+                                <div className='question-count'>
+                                    <span>
+                                        {currentQuestion + 1}</span> /{QuestionBank.length}
+                                    
+                                </div>
+                                <div className='question-text'>
+                                    {QuestionBank[currentQuestion].Question}
+                                </div>
+                            </div>
 
+                            {/* AnswerText */}
+                            <div className='answer-section'>
+                                {QuestionBank[currentQuestion].Answers.map((answer) =>
+                                (
+                                    <button onClick={() => handleAnswerResponse(answer.isCorrect)}>
+                                        {answer.Answer}
+                                    </button>
+                                ))}
                             </div>
                         </>
                     )
             }
         </div>
-    )
+    );
 }
 
 export default QuizComp

@@ -1,4 +1,3 @@
-import './App.css';
 import QuizComp from './quizCompnonents/QuizComp';
 
 function App() {
