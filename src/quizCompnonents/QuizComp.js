@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
 const QuizComp = () => {
 
@@ -50,10 +50,30 @@ const QuizComp = () => {
         },
     ]
 
+    // useStateHooks
+    const [currentQuestion, setCurrentQuestion] = useState(0)
+    const [score, setScore] = useState(0)
+    const [showScore, setShowScore] = useState(false)
+
+
     console.log(QuestionBank)
     return (
         <div>
-            quiz
+            {
+                showScore ?
+                    (
+                        <div>
+                            You have scored {score} out of {QuestionBank.length}
+                        </div>
+                    ) :
+                    (
+                        <>
+                            <div>
+
+                            </div>
+                        </>
+                    )
+            }
         </div>
     )
 }
