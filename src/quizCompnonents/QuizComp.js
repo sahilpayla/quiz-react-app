@@ -49,6 +49,51 @@ const QuizComp = () => {
                 { Answer: 'Sponge Bob Pants', isCorrect: true },
                 { Answer: 'Noddy', isCorrect: false }
             ]
+        },
+        {
+            Question: "What do you have to say to make the clubhouse appear ?",
+            Answers: [
+                { Answer: 'Mickey Wants To Know Your Location', isCorrect: false },
+                { Answer: 'San Diego', isCorrect: false },
+                { Answer: 'Meeska Mooska Mickey Mouse!', isCorrect: true },
+                { Answer: 'Im Here Where Are You', isCorrect: false }
+            ]
+        },
+        {
+            Question: "What color is Donald Duck's sailor suit? ?",
+            Answers: [
+                { Answer: 'Blue', isCorrect: true },
+                { Answer: 'Violet', isCorrect: false },
+                { Answer: 'Red', isCorrect: false },
+                { Answer: 'Green', isCorrect: false }
+            ]
+        },
+        {
+            Question: "What color is Daisy Duck's bow ?",
+            Answers: [
+                { Answer: 'Blue', isCorrect: false },
+                { Answer: 'Purple', isCorrect: true },
+                { Answer: 'Olive Pink', isCorrect: false },
+                { Answer: 'Cherry', isCorrect: false }
+            ]
+        },
+        {
+            Question: "What is the Mousekadoer ?",
+            Answers: [
+                { Answer: 'Pizza Hut', isCorrect: false },
+                { Answer: 'Pond', isCorrect: false },
+                { Answer: 'Wonder Land', isCorrect: false },
+                { Answer: "Mickey 's Computer", isCorrect: true }
+            ]
+        },
+        {
+            Question: "What is the name of the park near the clubhouse ?",
+            Answers: [
+                { Answer: 'Mouse Park', isCorrect: false },
+                { Answer: 'Mickey Park', isCorrect: true },
+                { Answer: 'Dyna Dee Park', isCorrect: false },
+                { Answer: 'Humiini Park', isCorrect: false }
+            ]
         }
     ]
 

@@ -8,12 +8,13 @@ body {
 }
 
 * {
-    font-family: "Verdana", cursive, sans-serif;
+    font-family: cursive, sans-serif;
     color: #ffffff;
+    font-size:20px;
 }
 
 body {
-    background-image: url('https://images4.alphacoders.com/111/1113741.jpg');
+    background-image: url('images/img1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -83,8 +84,8 @@ body {
 button {
     width: 100%;
     font-size: 16px;
-    color: #ffffff;
-    background-color: #006eff;
+    color: #000000;
+    background-color: #f5dc00;
     border-radius: 15px;
     display: flex;
     padding: 10px 20px;
@@ -93,6 +94,7 @@ button {
     border: none;
     transform: scale(0.9);
     transition: 0.6s;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -106,10 +108,10 @@ button {
 } */
 
 button:hover {
-    color: black;
-    transform: scale(1);
-    transition: 0.6s;
-    background-color: #7bff009f;
+    color: white;
+    transform: scale(0.95);
+    transition: 0.2s;
+    background-color: #ff0800;
 }
 
 button:focus {
